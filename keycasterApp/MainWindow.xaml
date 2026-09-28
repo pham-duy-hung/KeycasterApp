@@ -1,7 +1,7 @@
 ﻿<Window x:Class="keycasterApp.MainWindow"
- xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="KeyCaster &amp; AutoClicker" Height="350" Width="420"
+        Title="KeyCaster &amp; AutoClicker" Height="480" Width="420"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
@@ -36,14 +36,21 @@
                 </StackPanel>
 
                 <!-- Cài đặt Hotkey -->
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Hotkey Bật/Tắt:" Foreground="White" VerticalAlignment="Center" Width="100"/>
                     <TextBlock Text="[ F6 ]" Foreground="#FFD700" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
                 </StackPanel>
 
+                <!-- NÚT THÊM / XÓA Ô TARGET (Đã bổ sung rõ ràng) -->
+                <!-- NÚT THÊM / XÓA Ô TARGET -->
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,12">
+                    <Button x:Name="BtnAddTarget" Content="+ Thêm Ô" Click="BtnAddTarget_Click" Background="#28A745" Foreground="White" Padding="12,5" Margin="0,0,10,0" BorderThickness="0" FontWeight="Bold" Cursor="Hand"/>
+                    <Button x:Name="BtnRemoveTarget" Content="- Xóa Ô" Click="BtnRemoveTarget_Click" Background="#DC3545" Foreground="White" Padding="12,5" BorderThickness="0" FontWeight="Bold" Cursor="Hand"/>
+                </StackPanel>
+
                 <!-- Nút Bật / Dừng -->
-                <Button x:Name="BtnToggleAutoClick" Content="BẬT AUTOCLICK (F6)" Click="BtnToggleAutoClick_Click" 
-                        Background="#007ACC" Foreground="White" FontWeight="Bold" Padding="8" BorderThickness="0" Cursor="Hand">
+                <Button x:Name="BtnToggleAutoClick" Content="BẬT CHẠY TỰ ĐỘNG (F6)" Click="BtnToggleAutoClick_Click" 
+                        Background="#007ACC" Foreground="White" FontWeight="Bold" Padding="10" BorderThickness="0" Cursor="Hand">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="6"/>

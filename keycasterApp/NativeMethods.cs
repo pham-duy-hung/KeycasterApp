@@ -26,10 +26,12 @@ namespace keycasterApp
         // --- Win32 API Hotkey ---
         public const int WM_HOTKEY = 0x0312;
 
-        [DllImport("user32.dll")]
+        public const uint VK_F6 = 0x75;
+
+        [DllImport("user32.dll", SetLastError = true)]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
     }
 }
